@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: fairqueue
+      POSTGRES_PASSWORD: fairqueue
+      POSTGRES_DB: fairqueue
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/001_schema.sql

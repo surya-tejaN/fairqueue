@@ -1,0 +1,19 @@
+[project]
+name = "fairqueue"
+version = "0.1.0"
+description = "Concurrent job queue with visibility timeouts, JWT enqueue, and idempotent writes."
+requires-python = ">=3.9"
+dependencies = [
+  "fastapi==0.115.6",
+  "uvicorn==0.32.1",
+  "pydantic==2.10.3",
+  "PyJWT==2.10.1",
+  "psycopg[binary]==3.2.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4", "httpx==0.28.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
